@@ -11,6 +11,18 @@ public class SlotScript : MonoBehaviour
     [SerializeField]
     private Button removeButton;
 
+    private PlayableCharacter character = null;
+
+    private void Start()
+    {
+        character = FindObjectOfType<PlayerActor>().GetCharacter();
+    }
+
+    private void Update()
+    {
+        
+    }
+
     public void AddItemToSlot(BaseItem newItem)
     {
         item = newItem;
@@ -35,7 +47,9 @@ public class SlotScript : MonoBehaviour
     {
         if (item !=null)
         {
-            item.ItemUse();
+            item.ItemUse(character);
+
+            character.AddStatsFromEquipment();//Eso lo tengo que arreglar, pero que se yo, todavía no se me ocurre como
         }
         else
         {

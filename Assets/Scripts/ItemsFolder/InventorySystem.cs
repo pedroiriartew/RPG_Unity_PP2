@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class InventorySystem
 {
     private BaseItem[] playerBag = new BaseItem[10];
@@ -15,13 +16,13 @@ public class InventorySystem
     public enum EquipableSlot
     {
         chest = 0,
-        ring,
-        artifact
+        ring = 1,
+        artifact = 2
     }
 
-    public void UseObject()
+    public BaseItem[] GetEquipment()
     {
-        //Ponele que en algún momento haga algo con esto
+        return playerEquipment;
     }
 
     public bool AddToInventory(BaseItem item)
@@ -44,6 +45,56 @@ public class InventorySystem
         Debug.Log("No tienes más espacio en el inventario para agregar este objeto.");
         return false;
     }
+
+    public void AddToEquipment(EquipableItem item)
+    {
+        if (item.GetEquipmentSlot() == EquipableSlot.chest)
+        {
+            if (playerEquipment[0] == null)
+            {
+                playerEquipment[0] = item;
+                return;
+            }
+            else
+            {
+                AddToInventory(playerEquipment[0]);
+                playerEquipment[0] = item;
+                return;
+            }
+        }
+
+        if (item.GetEquipmentSlot() == EquipableSlot.ring)
+        {
+            if (playerEquipment[1] == null)
+            {
+                playerEquipment[1] = item;
+                return;
+            }
+            else
+            {
+                AddToInventory(playerEquipment[1]);
+                playerEquipment[1] = item;
+                return;
+            }
+        }
+
+        if (item.GetEquipmentSlot() == EquipableSlot.artifact)
+        {
+            if (playerEquipment[2] == null)
+            {
+                playerEquipment[2] = item;
+                return;
+            }
+            else
+            {
+                AddToInventory(playerEquipment[2]);
+                playerEquipment[2] = item;
+                return;
+            }
+        }
+
+    }
+
 
     public void RemoveFromInventory(BaseItem item)
     {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 
+[System.Serializable]
 public abstract class PlayableCharacter : BaseCharacter
 {
     private InventorySystem inventory = null;
@@ -20,14 +21,22 @@ public abstract class PlayableCharacter : BaseCharacter
         Quizás no sirva una mierda esta idea
      */
 
+    public void AddStatsFromEquipment()
+    {
+        BaseItem[] equipment = inventory.GetEquipment();
+
+        for (int i = 0; i < equipment.Length; i++)
+        {
+            if (equipment[i] != null)
+            {
+                SetStats(equipment[i].GetStats());
+            }
+        }
+    }
+
     public InventorySystem GetInventory()
     {
         return inventory;
-    }
-
-    public void SetInventory(InventorySystem inventorySystem)
-    {
-        inventory = inventorySystem;
     }
 
     public override void Die()
