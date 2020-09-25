@@ -2,9 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+
 
 public class PlayerActor : MonoBehaviour
 {
+    [SerializeField]
     private PlayableCharacter character = null;
 
     private float horizontalMovement = 0f;
@@ -17,10 +20,8 @@ public class PlayerActor : MonoBehaviour
 
     private void Awake()
     {
-        //character = CharacterCreator.GetInstance().GetClass();
-         character = new Rogue();
+        SetCharacter();
 
-       // character.SetInventory(new InventorySystem());
         Debug.Log(character.GetInventory());
 
         cam = Camera.main;
@@ -45,6 +46,7 @@ public class PlayerActor : MonoBehaviour
         {
             OpenCloseInventory?.Invoke();
         }
+
     }
 
     private void Jump()
@@ -88,6 +90,34 @@ public class PlayerActor : MonoBehaviour
             }
         }
 
+    }
+
+    public void SetCharacter()
+    {
+        string json = File.ReadAllText(Application.dataPath + "/characterFile.json");
+
+        CharacterData characterData = JsonUtility.FromJson<CharacterData>(json);
+
+        if (characterData.GetDataCharacterClass() == "Rogue")
+        {
+            character = new Rogue();
+            character.SetNewStats(characterData.GetDataStats());
+            character.SetInventory(characterData.GetDataInventory());
+        }
+
+        if (characterData.GetDataCharacterClass() == "Sorcerer")
+        {
+            character = new Sorcerer();
+            character.SetNewStats(characterData.GetDataStats());
+            character.SetInventory(characterData.GetDataInventory());
+        }
+
+        if (characterData.GetDataCharacterClass() == "Warrior")
+        {
+            character = new Warrior();
+            character.SetNewStats(characterData.GetDataStats());
+            character.SetInventory(characterData.GetDataInventory());
+        }
     }
 
     public PlayableCharacter GetCharacter()

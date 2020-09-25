@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 
-[System.Serializable]
 public abstract class PlayableCharacter : BaseCharacter
 {
-    private InventorySystem inventory = null;
+    [SerializeField]
+    protected InventorySystem inventory = null;
+
+    [SerializeField]
+    protected string className;
 
     // Cada clase va a tener su propia habilidad especial.
     public virtual void SpecialAbility()
@@ -34,11 +37,6 @@ public abstract class PlayableCharacter : BaseCharacter
         }
     }
 
-    public InventorySystem GetInventory()
-    {
-        return inventory;
-    }
-
     public override void Die()
     {
         //Jajaj no se puede bro
@@ -59,4 +57,28 @@ public abstract class PlayableCharacter : BaseCharacter
         myStats.speed += moreStats.speed;
     }
 
+    public void SetNewStats(Stats newStats)
+    {
+        myStats = newStats;
+    }
+
+    public Stats GetStats()
+    {
+        return myStats;
+    }
+
+    public InventorySystem GetInventory()
+    {
+        return inventory;
+    }
+
+    public void SetInventory(InventorySystem newInventory)
+    {
+        inventory = newInventory;
+    }
+
+    public string GetClassName()
+    {
+        return className;
+    }
 }

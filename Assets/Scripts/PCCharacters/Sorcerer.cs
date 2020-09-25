@@ -2,14 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Sorcerer : PlayableCharacter
 {
     public Sorcerer()
     {
         myStats.life = 75;
+        myStats.lifeCap = 75;
         myStats.dmg = 100;
         myStats.speed = 1.5f;
         myStats.range = 15f;
+        inventory = new InventorySystem();
+        className = "Sorcerer";
     }
 
     public override void SpecialAbility()

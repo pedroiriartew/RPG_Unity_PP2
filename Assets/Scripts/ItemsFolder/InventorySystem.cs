@@ -6,7 +6,9 @@ using UnityEngine;
 [System.Serializable]
 public class InventorySystem
 {
+    [SerializeField]
     private BaseItem[] playerBag = new BaseItem[10];
+    [SerializeField]
     private BaseItem[] playerEquipment = new BaseItem[3];
 
     private int amountOfItemsInBag = 0;
@@ -46,6 +48,8 @@ public class InventorySystem
         return false;
     }
 
+
+    //Cambiar todo esto por un switch
     public void AddToEquipment(EquipableItem item)
     {
         if (item.GetEquipmentSlot() == EquipableSlot.chest)

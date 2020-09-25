@@ -1,0 +1,144 @@
+{
+    "itemList": [{
+            "itemID": 0,
+            "icon": {
+                "instanceID": 0
+            },
+            "itemStats": {
+                "dmg": 0.0,
+                "life": 30.0,
+                "lifeCap": 0.0,
+                "speed": 0.0,
+                "range": 0.0
+            },
+            "name": "Potion of Healing",
+            "itemType": 3
+        }, {
+            "itemID": 1,
+            "icon": {
+                "instanceID": 0
+            },
+            "itemStats": {
+                "dmg": 0.0,
+                "life": 0.0,
+                "lifeCap": 0.0,
+                "speed": 30.0,
+                "range": 0.0
+            },
+            "name": "Great Potion of Speed",
+            "itemType": 3
+        }, {
+            "itemID": 2,
+            "icon": {
+                "instanceID": 0
+            },
+            "itemStats": {
+                "dmg": 20.0,
+                "life": 0.0,
+                "lifeCap": 0.0,
+                "speed": 0.0,
+                "range": 0.0
+            },
+            "name": "Strength Amber",
+            "itemType": 3
+        }, {
+            "itemID": 3,
+            "icon": {
+                "instanceID": 0
+            },
+            "itemStats": {
+                "dmg": 0.0,
+                "life": 0.0,
+                "lifeCap": 0.0,
+                "speed": 15.0,
+                "range": 0.0
+            },
+            "name": "Temporary Orb of Speed",
+            "itemType": 1
+        }, {
+            "itemID": 4,
+            "icon": {
+                "instanceID": 0
+            },
+            "itemStats": {
+                "dmg": 0.0,
+                "life": 0.0,
+                "lifeCap": 0.0,
+                "speed": 0.0,
+                "range": 15.0
+            },
+            "name": "Temporary Orb of Range",
+            "itemType": 1
+        }, {
+            "itemID": 5,
+            "icon": {
+                "instanceID": 0
+            },
+            "itemStats": {
+                "dmg": 15.0,
+                "life": 0.0,
+                "lifeCap": 0.0,
+                "speed": 0.0,
+                "range": 0.0
+            },
+            "name": "Temporary Orb of Damage",
+            "itemType": 1
+        }, {
+            "itemID": 6,
+            "icon": {
+                "instanceID": 0
+            },
+            "itemStats": {
+                "dmg": 0.0,
+                "life": 0.0,
+                "lifeCap": 30.0,
+                "speed": -5.0,
+                "range": 0.0
+            },
+            "name": "Heavy Armor",
+            "itemType": 2
+        }, {
+            "itemID": 7,
+            "icon": {
+                "instanceID": 0
+            },
+            "itemStats": {
+                "dmg": 30.0,
+                "life": 0.0,
+                "lifeCap": -30.0,
+                "speed": 0.0,
+                "range": 0.0
+            },
+            "name": "Glass Cannon Amulet",
+            "itemType": 2
+        }, {
+            "itemID": 8,
+            "icon": {
+                "instanceID": 0
+            },
+            "itemStats": {
+                "dmg": 0.0,
+                "life": 0.0,
+                "lifeCap": 0.0,
+                "speed": 0.0,
+                "range": 20.0
+            },
+            "name": "Sharpshooter Ring",
+            "itemType": 2
+        }, {
+            "itemID": 9,
+            "icon": {
+                "instanceID": 0
+            },
+            "itemStats": {
+                "dmg": 5.0,
+                "life": 0.0,
+                "lifeCap": 0.0,
+                "speed": 15.0,
+                "range": -5.0
+            },
+            "name": "Lightning Ring",
+            "itemType": 2
+        }
+    ]
+}

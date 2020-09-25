@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class ConsumableItem : BaseItem
 {
+    public ConsumableItem()
+    {
+        itemType = ItemType.Consumable;
+    }
+
+    
     public override void ItemUse(PlayableCharacter character)
     {
         character.SetStats(itemStats);

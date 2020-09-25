@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class MiscellaneousItem : BaseItem
 {
+    public MiscellaneousItem()
+    {
+        itemType = ItemType.Miscellaneous;
+    }
+
     public override void ItemUse(PlayableCharacter character)
     {
         throw new System.NotImplementedException();

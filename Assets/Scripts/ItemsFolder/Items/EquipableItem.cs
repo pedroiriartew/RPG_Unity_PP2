@@ -7,6 +7,11 @@ public class EquipableItem : BaseItem
 
     InventorySystem.EquipableSlot slotEquipment;
 
+    public EquipableItem()
+    {
+        itemType = ItemType.Equipable;
+    }
+
     public override void ItemUse(PlayableCharacter character)
     {
         character.GetInventory().AddToEquipment(this);
